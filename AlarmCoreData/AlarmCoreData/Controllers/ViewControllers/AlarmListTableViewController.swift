@@ -23,8 +23,8 @@ class AlarmListTableViewController: UITableViewController {
     
     // MARK: - pull data and default to reload table view
     func loadAlarms(relaodTable: Bool) {
-        //reduce the calls to the fetch requests
-        alarms = AlarmController.shared.alarms
+        //reduce the calls to the fetch requests, make sure the order same for different fetch results
+        alarms = AlarmController.shared.alarms.sorted{ $0.fireDate ?? Date() < $1.fireDate ?? Date() }
         if relaodTable {
             tableView.reloadData()
         }
