@@ -7,6 +7,14 @@
 
 import CoreData
 
+//protocol PropertyRetriveable {
+//    associatedtype PropertiesEnum
+//    func propertyType(_ propertyEnum: PropertiesEnum)
+//}
+
+
+
+
 class AlarmController: AlarmScheduler {
         
     static let shared = AlarmController()
@@ -22,6 +30,12 @@ class AlarmController: AlarmScheduler {
         }
         
     }
+    
+    // MARK: - Fetch Alarms (Generic)
+
+//    func fetchData<T: PropertyRetriveable>(_ type: T, sortedby enum: T.PropertiesEnum) -> [T] {
+//
+//    }
     
     // MARK: - CRUD functions
     
